@@ -1,0 +1,139 @@
+@import "_normalize";
+@mixin change-size {
+  @media (max-width: 750px) {
+    @content;
+  }
+}
+.art-mod{
+	background-color: #ADFF2F;
+}
+body{
+	margin: 0 auto;
+	background-color: #5fcf80;
+	header{
+		width: 100%;
+		background-color: #fff;
+		overflow: auto;
+		#menu{
+			width: 75%;
+			position: fixed;
+			transform:translate(-75%,0);
+			height: 100%;
+			transition:transform 1s ease;
+			background-color: #6b6b6b;
+
+			.menu__list{
+				padding: 0;
+				.menu__item{
+					display: block;
+					border-bottom: 1px solid #fff;
+					text-transform: uppercase;
+				}
+			}
+			&.active{
+				transform:translateX(0);
+			}
+		}
+		.logo{
+			display: inline-block;
+			margin-left: 2%;
+			float: left;
+		}
+		nav{
+			display: inline-block;
+			width: 250px;
+    		margin-top: 15px;
+    		margin-left: 1%;
+			.nav{
+				padding: 0;
+				.nav__a{
+
+					.nav__menu{
+						color: #576c95;
+						display: inline-block;
+						float: right;
+						text-transform: uppercase;
+						margin-right: 7%;
+					}
+				}
+				
+			}
+		}
+		.help{
+			background-color: transparent;
+			border: none;
+			color: #4da83b;
+			float: right;
+			padding: 5px;
+			margin-right: 2%;
+    		margin-top: 23px;
+    		border: 2px solid transparent;
+			&:hover{
+				border-color: #4da83b;
+				border-radius: 5px;
+			}
+			&:active{
+				margin-top: 1px;
+			}
+		}
+	}
+	main{
+		.block{
+			width: 250px;
+			border-radius: 6px;
+			background-color: #fff;
+			display: inline-block;
+		    padding: 50px 0;
+		    margin: 10px 0 0 2%;
+		    float: left;
+		    height: 71px;
+			.block__play{
+				border-radius: 6px;
+				background-color:  #5fcf80;
+				width: 80%;
+				height: 30px;
+				text-transform: uppercase;
+				color: #fff;
+				box-shadow: 3px 2px 6px #000;
+			    border: none;
+			    display: block;
+			    margin: 15px auto;
+			    opacity: 0.7;
+				&:hover{
+					opacity: 0.9;
+				}
+				&:active{
+					margin-top: 1px;
+				}
+			}
+		}
+		section{
+			width: calc(96% - 450px);
+			display: inline-block;
+			float: left;
+			.art{
+				margin: 10px auto;
+				background-color: #fff;
+				height: 171px;
+				border-radius: 6px;
+				width: 95%;
+				.art__photo{
+					display: inline-block;
+					width: 101px;
+					height: 171px;
+				}
+				.art__text{
+					display: inline-block;
+				}
+			}
+		}
+		aside{
+		display: inline-block;
+		width: 200px;
+		height: 500px;
+		background-color: #fff;
+	    margin: 1% 1% 0 0;
+	    border-radius: 6px;
+		}
+	}
+}
