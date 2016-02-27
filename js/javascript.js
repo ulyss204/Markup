@@ -12,7 +12,13 @@ function toggleClass(element, className){
     }
     element.className = classString;
 }
-
-document.getElementsByClassName('art').addEventListener('click', function() {
-    toggleClass(this, 'art-mod');
+var elements = document.querySelector('.art');
+elements.addEventListener('click', function() {
+    toggleClass(this,'art-mod');
 });
+document.getElementById('hamburger').addEventListener('click', function() {
+    toggleClass(this, 'active');
+    toggleClass(document.querySelector('.menu'), 'active');
+    toggleClass(document.getElementById('wrapper'), 'active1');
+});
+

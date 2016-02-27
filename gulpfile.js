@@ -9,7 +9,7 @@ gulp.task('styles', function() {
 	gulp.src('sass/*.scss')
 		.pipe(sass().on('error', sass.logError))
 		.pipe(autoprefixer({
-			browsers:['> 5%'],
+			browsers:['> 1%'],
 			cascade: false
 		}))
 		.pipe(gulp.dest('./css'))
