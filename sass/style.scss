@@ -4,6 +4,30 @@
     @content;
   }
 }
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white){
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount; 
+  text-align: justify;
+  margin-right: -1em;
+  padding-right: 1em;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bgColor;
+  }
+}
 .art-mod.art{
 	background-color: #ADFF2F;
 }
@@ -243,10 +267,21 @@ body{
 						display: inline-block;
 						width: 101px;
 						height: 171px;
+						background: url(../images/char-boy.png) no-repeat;
+					}
+					#princess{
+						background: url(../images/char-princess-girl.png) no-repeat;
+					}
+					#bug{
+						background: url(../images/enemy-bug.png) no-repeat;
+					}
+					#heart{
+						background: url(../images/Heart.png) no-repeat;
 					}
 					.art__text{
 						display: inline-block;
 						position: absolute;
+						@include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);
 					}
 				}
 			}

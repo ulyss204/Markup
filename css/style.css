@@ -567,10 +567,37 @@ body {
         body #wrapper main section .art .art__photo {
           display: inline-block;
           width: 101px;
-          height: 171px; }
+          height: 171px;
+          background: url(../images/char-boy.png) no-repeat; }
+        body #wrapper main section .art #princess {
+          background: url(../images/char-princess-girl.png) no-repeat; }
+        body #wrapper main section .art #bug {
+          background: url(../images/enemy-bug.png) no-repeat; }
+        body #wrapper main section .art #heart {
+          background: url(../images/Heart.png) no-repeat; }
         body #wrapper main section .art .art__text {
           display: inline-block;
-          position: absolute; }
+          position: absolute;
+          overflow: hidden;
+          position: relative;
+          line-height: 1.2em;
+          max-height: 3.6em;
+          text-align: justify;
+          margin-right: -1em;
+          padding-right: 1em; }
+          body #wrapper main section .art .art__text:before {
+            content: '...';
+            position: absolute;
+            right: 0;
+            bottom: 0; }
+          body #wrapper main section .art .art__text:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            width: 1em;
+            height: 1em;
+            margin-top: 0.2em;
+            background: white; }
     body #wrapper main aside {
       display: inline-block;
       width: 200px;
