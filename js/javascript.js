@@ -17,8 +17,8 @@ elements.addEventListener('click', function() {
     toggleClass(this,'art-mod');
 });
 document.getElementById('hamburger').addEventListener('click', function() {
-    toggleClass(this, 'active');
-    toggleClass(document.querySelector('.menu'), 'active');
-    toggleClass(document.getElementById('wrapper'), 'active1');
+    
+    toggleClass(document.querySelector('body'), 'active');
+    
 });
 

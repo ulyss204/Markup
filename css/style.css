@@ -379,20 +379,20 @@ th {
   margin-left: 2%; }
   @media (max-width: 750px) {
     #hamburger {
-      display: inline-block; } }
-  #hamburger.active .span {
-    background-color: transparent; }
-    #hamburger.active .span:before {
-      top: 0;
-      -webkit-transform: rotate(45deg);
-      transform: rotate(45deg); }
-    #hamburger.active .span:after {
-      top: 0;
-      -webkit-transform: rotate(-45deg);
-      transform: rotate(-45deg); }
+      display: inline-block; }
+      body.active #hamburger .span {
+        background-color: transparent; }
+        body.active #hamburger .span:before {
+          top: 0;
+          -webkit-transform: rotate(45deg);
+          transform: rotate(45deg); }
+        body.active #hamburger .span:after {
+          top: 0;
+          -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg); } }
   #hamburger .span {
-    -webkit-transition: all 500ms ease-in-out;
-    transition: all 500ms ease-in-out;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
     cursor: pointer;
     border-radius: 1px;
     height: 5px;
@@ -403,12 +403,13 @@ th {
     float: left;
     background-color: #3ac162;
     top: 20px; }
-    #hamburger .span.active {
-      background-color: transparent; }
+    @media (max-width: 750px) {
+      body.active #hamburger .span {
+        background-color: transparent; } }
     #hamburger .span:before {
       background-color: #3ac162;
-      -webkit-transition: all 500ms ease-in-out;
-      transition: all 500ms ease-in-out;
+      -webkit-transition: all 300ms ease-in-out;
+      transition: all 300ms ease-in-out;
       cursor: pointer;
       border-radius: 1px;
       height: 5px;
@@ -419,8 +420,8 @@ th {
       top: -10px; }
     #hamburger .span:after {
       background-color: #3ac162;
-      -webkit-transition: all 500ms ease-in-out;
-      transition: all 500ms ease-in-out;
+      -webkit-transition: all 300ms ease-in-out;
+      transition: all 300ms ease-in-out;
       cursor: pointer;
       border-radius: 1px;
       height: 5px;
@@ -433,178 +434,177 @@ th {
 body {
   margin: 0 auto;
   background-color: #5fcf80; }
-  body .menu {
-    width: 300px;
-    position: fixed;
-    -webkit-transform: translate(-300px, 0);
-    transform: translate(-300px, 0);
-    height: 100%;
-    -webkit-transition: -webkit-transform 1s ease;
-    transition: -webkit-transform 1s ease;
-    transition: transform 1s ease;
-    transition: transform 1s ease, -webkit-transform 1s ease;
-    background-color: #6b6b6b; }
-    body .menu .menu__list {
-      padding: 0; }
-      body .menu .menu__list a {
-        text-decoration: none; }
-        body .menu .menu__list a .menu__item {
-          display: block;
-          border-bottom: 1px solid #fff;
-          text-transform: uppercase;
-          color: #fff;
-          padding: 20px;
-          font-size: 19px; }
-    body .menu.active {
-      -webkit-transform: translateX(0);
-      transform: translateX(0); }
-  body #wrapper {
-    -webkit-transition: -webkit-transform 1s ease;
-    transition: -webkit-transform 1s ease;
-    transition: transform 1s ease;
-    transition: transform 1s ease, -webkit-transform 1s ease; }
-    body #wrapper.active1 {
-      -webkit-transform: translateX(300px);
-      transform: translateX(300px); }
-    body #wrapper header {
-      width: 100%;
-      background-color: #fff;
-      overflow: auto; }
-      body #wrapper header .logo {
-        display: inline-block;
-        margin-left: 2%;
-        float: left;
-        background: url(../images/flopper.png) no-repeat;
-        width: 162px;
-        height: 74px; }
-        @media (max-width: 750px) {
-          body #wrapper header .logo {
-            display: inline-block;
-            background: url(../images/flopper1.png) no-repeat;
-            width: 110px;
-            height: 50px; } }
-      body #wrapper header nav {
-        display: inline-block;
-        width: 250px;
-        margin-top: 15px;
-        margin-left: 4%; }
-        @media (max-width: 750px) {
-          body #wrapper header nav {
-            display: none; } }
-        body #wrapper header nav .nav {
-          padding: 0; }
-          body #wrapper header nav .nav .nav__a .nav__menu {
-            color: #576c95;
-            display: inline-block;
-            float: right;
-            text-transform: uppercase;
-            margin-right: 7%; }
-      body #wrapper header .help {
-        background-color: transparent;
-        border: none;
-        color: #4da83b;
-        float: right;
-        padding: 5px;
-        margin-right: 2%;
-        margin-top: 25px;
-        border: 2px solid transparent; }
-        body #wrapper header .help:hover {
-          border-color: #4da83b;
-          border-radius: 5px; }
-        body #wrapper header .help:active {
-          margin-top: 1px; }
-        @media (max-width: 750px) {
-          body #wrapper header .help {
-            margin-top: 10px; } }
-    body #wrapper main .block {
-      width: 250px;
-      border-radius: 6px;
-      background-color: #fff;
-      display: inline-block;
-      padding: 50px 0;
-      margin: 10px 0 0 2%;
-      float: left;
-      height: 71px; }
-      @media (max-width: 750px) {
-        body #wrapper main .block {
-          width: 100%;
-          display: block;
-          margin-left: 0; } }
-      body #wrapper main .block .block__play {
-        border-radius: 6px;
-        background-color: #5fcf80;
-        width: 80%;
-        height: 30px;
+
+.menu {
+  width: 300px;
+  position: fixed;
+  -webkit-transform: translate(-300px, 0);
+  transform: translate(-300px, 0);
+  height: 100%;
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease;
+  background-color: #6b6b6b; }
+  .menu .menu__list {
+    padding: 0; }
+    .menu .menu__list a {
+      text-decoration: none; }
+      .menu .menu__list a .menu__item {
+        display: block;
+        border-bottom: 1px solid #fff;
         text-transform: uppercase;
         color: #fff;
-        box-shadow: 3px 2px 6px #000;
-        border: none;
+        padding: 20px;
+        font-size: 19px; }
+  @media (max-width: 750px) {
+    body.active .menu {
+      -webkit-transform: translateX(0);
+      transform: translateX(0); } }
+
+#wrapper {
+  -webkit-transition: -webkit-transform 0.4s ease;
+  transition: -webkit-transform 0.4s ease;
+  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, -webkit-transform 0.4s ease; }
+  @media (max-width: 750px) {
+    body.active #wrapper {
+      -webkit-transform: translateX(300px);
+      transform: translateX(300px); } }
+  #wrapper header {
+    width: 100%;
+    background-color: #fff;
+    overflow: auto; }
+    #wrapper header .logo {
+      display: inline-block;
+      margin-left: 2%;
+      float: left;
+      background: url(../images/flopper.png) no-repeat;
+      width: 162px;
+      height: 74px; }
+      @media (max-width: 750px) {
+        #wrapper header .logo {
+          display: inline-block;
+          background: url(../images/flopper1.png) no-repeat;
+          width: 110px;
+          height: 50px; } }
+    #wrapper header nav {
+      display: inline-block;
+      width: 250px;
+      margin-top: 15px;
+      margin-left: 4%; }
+      @media (max-width: 750px) {
+        #wrapper header nav {
+          display: none; } }
+      #wrapper header nav .nav {
+        padding: 0; }
+        #wrapper header nav .nav .nav__a .nav__menu {
+          color: #576c95;
+          display: inline-block;
+          float: right;
+          text-transform: uppercase;
+          margin-right: 7%; }
+    #wrapper header .help {
+      background-color: transparent;
+      border: none;
+      color: #4da83b;
+      float: right;
+      padding: 5px;
+      margin-right: 2%;
+      margin-top: 25px;
+      border: 2px solid transparent; }
+      #wrapper header .help:hover {
+        border-color: #4da83b;
+        border-radius: 5px; }
+      @media (max-width: 750px) {
+        #wrapper header .help {
+          margin-top: 10px; } }
+  #wrapper main .block {
+    width: 250px;
+    border-radius: 6px;
+    background-color: #fff;
+    display: inline-block;
+    padding: 50px 0;
+    margin: 10px 0 0 2%;
+    float: left;
+    height: 71px; }
+    @media (max-width: 750px) {
+      #wrapper main .block {
+        width: 100%;
         display: block;
-        margin: 15px auto;
-        opacity: 0.7; }
-        body #wrapper main .block .block__play:hover {
-          opacity: 0.9; }
-        body #wrapper main .block .block__play:active {
-          margin-top: 1px; }
-        @media (max-width: 750px) {
-          body #wrapper main .block .block__play {
-            width: 50%; } }
-    body #wrapper main section {
-      width: calc(96% - 450px);
-      display: inline-block;
-      float: left; }
+        margin-left: 0; } }
+    #wrapper main .block .block__play {
+      border-radius: 6px;
+      background-color: #5fcf80;
+      width: 80%;
+      height: 30px;
+      text-transform: uppercase;
+      color: #fff;
+      box-shadow: 3px 2px 6px #000;
+      border: none;
+      display: block;
+      margin: 15px auto;
+      opacity: 0.7; }
+      #wrapper main .block .block__play:hover {
+        opacity: 0.9; }
       @media (max-width: 750px) {
-        body #wrapper main section {
-          width: 100%;
-          display: block; } }
-      body #wrapper main section .art {
-        margin: 10px auto;
-        background-color: #fff;
-        height: 171px;
-        border-radius: 6px;
-        width: 95%;
-        position: relative; }
-        body #wrapper main section .art .art__photo {
-          display: inline-block;
-          width: 101px;
-          height: 171px;
-          background: url(../images/char-boy.png) no-repeat; }
-        body #wrapper main section .art #princess {
-          background: url(../images/char-princess-girl.png) no-repeat; }
-        body #wrapper main section .art #bug {
-          background: url(../images/enemy-bug.png) no-repeat; }
-        body #wrapper main section .art #heart {
-          background: url(../images/Heart.png) no-repeat; }
-        body #wrapper main section .art .art__text {
-          display: inline-block;
-          position: absolute;
-          overflow: hidden;
-          position: relative;
-          line-height: 1.2em;
-          max-height: 3.6em;
-          text-align: justify;
-          margin-right: -1em;
-          padding-right: 1em; }
-          body #wrapper main section .art .art__text:before {
-            content: '...';
-            position: absolute;
-            right: 0;
-            bottom: 0; }
-          body #wrapper main section .art .art__text:after {
-            content: '';
-            position: absolute;
-            right: 0;
-            width: 1em;
-            height: 1em;
-            margin-top: 0.2em;
-            background: white; }
-    body #wrapper main aside {
-      display: inline-block;
-      width: 200px;
-      height: 500px;
+        #wrapper main .block .block__play {
+          width: 50%; } }
+  #wrapper main section {
+    width: calc(96% - 450px);
+    display: inline-block;
+    float: left; }
+    @media (max-width: 750px) {
+      #wrapper main section {
+        width: 100%;
+        display: block; } }
+    #wrapper main section .art {
+      margin: 10px auto;
       background-color: #fff;
-      margin: 1% 1% 0 0;
-      border-radius: 6px; }
-      @media (max-width: 750px) {
-        body #wrapper main aside {
-          width: 100%; } }
+      height: 171px;
+      border-radius: 6px;
+      width: 95%;
+      position: relative; }
+      #wrapper main section .art .art__photo {
+        display: inline-block;
+        width: 101px;
+        height: 171px;
+        background: url(../images/char-boy.png) no-repeat; }
+      #wrapper main section .art #princess {
+        background: url(../images/char-princess-girl.png) no-repeat; }
+      #wrapper main section .art #bug {
+        background: url(../images/char-horn-girl.png) no-repeat; }
+      #wrapper main section .art #heart {
+        background: url(../images/char-pink-girl.png) no-repeat; }
+      #wrapper main section .art .art__text {
+        display: inline-block;
+        position: absolute;
+        overflow: hidden;
+        line-height: 1.2em;
+        max-height: 3.6em;
+        text-align: justify;
+        margin-right: 1em;
+        padding-right: 1em; }
+        #wrapper main section .art .art__text:before {
+          content: '...';
+          position: absolute;
+          right: 0;
+          bottom: 0; }
+        #wrapper main section .art .art__text:after {
+          content: '';
+          position: absolute;
+          right: 0;
+          width: 1em;
+          height: 1em;
+          margin-top: 0.2em;
+          background: white; }
+  #wrapper main aside {
+    display: inline-block;
+    width: 200px;
+    height: 500px;
+    background-color: #fff;
+    margin: 1% 1% 0 0;
+    border-radius: 6px; }
+    @media (max-width: 750px) {
+      #wrapper main aside {
+        width: 100%; } }
