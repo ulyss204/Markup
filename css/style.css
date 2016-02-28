@@ -368,9 +368,6 @@ td,
 th {
   padding: 0; }
 
-.art-mod.art {
-  background-color: #ADFF2F; }
-
 #hamburger {
   float: left;
   display: none;
@@ -433,7 +430,10 @@ th {
 
 body {
   margin: 0 auto;
-  background-color: #5fcf80; }
+  background-color: #5fcf80;
+  min-width: 320px; }
+  body.active {
+    overflow-x: hidden; }
 
 .menu {
   width: 300px;
@@ -448,14 +448,14 @@ body {
   background-color: #6b6b6b; }
   .menu .menu__list {
     padding: 0; }
-    .menu .menu__list a {
-      text-decoration: none; }
-      .menu .menu__list a .menu__item {
-        display: block;
-        border-bottom: 1px solid #fff;
+    .menu .menu__list .menu__item {
+      display: block;
+      padding: 20px;
+      border-bottom: 1px solid #fff; }
+      .menu .menu__list .menu__item a {
+        text-decoration: none;
         text-transform: uppercase;
         color: #fff;
-        padding: 20px;
         font-size: 19px; }
   @media (max-width: 750px) {
     body.active .menu {
@@ -498,28 +498,30 @@ body {
           display: none; } }
       #wrapper header nav .nav {
         padding: 0; }
-        #wrapper header nav .nav .nav__a .nav__menu {
-          color: #576c95;
+        #wrapper header nav .nav .nav__menu {
           display: inline-block;
           float: right;
           text-transform: uppercase;
           margin-right: 7%; }
-    #wrapper header .help {
-      background-color: transparent;
-      border: none;
-      color: #4da83b;
-      float: right;
-      padding: 5px;
-      margin-right: 2%;
-      margin-top: 25px;
-      border: 2px solid transparent;
-      outline: none; }
-      #wrapper header .help:hover {
-        border-color: #4da83b;
-        border-radius: 5px; }
-      @media (max-width: 750px) {
-        #wrapper header .help {
-          margin-top: 10px; } }
+          #wrapper header nav .nav .nav__menu a {
+            color: #576c95;
+            text-decoration: none; }
+  #wrapper .help {
+    background-color: transparent;
+    border: none;
+    color: #4da83b;
+    float: right;
+    padding: 5px;
+    margin-right: 2%;
+    margin-top: 25px;
+    border: 2px solid transparent;
+    outline: none; }
+    #wrapper .help:hover {
+      border-color: #4da83b;
+      border-radius: 5px; }
+    @media (max-width: 750px) {
+      #wrapper .help {
+        margin-top: 10px; } }
   #wrapper main .block {
     width: 250px;
     border-radius: 6px;
@@ -533,7 +535,8 @@ body {
       #wrapper main .block {
         width: 95%;
         display: block;
-        margin-left: 0; } }
+        float: none;
+        margin: 7px auto; } }
     #wrapper main .block .block__play {
       border-radius: 6px;
       background-color: #5fcf80;
@@ -566,11 +569,20 @@ body {
       border-radius: 6px;
       width: 95%;
       position: relative; }
+      #wrapper main section .art.art-mod {
+        background-color: #ccc; }
+        #wrapper main section .art.art-mod .art__photo {
+          -webkit-transform: scale(1.5);
+          transform: scale(1.5); }
       #wrapper main section .art .art__photo {
         display: inline-block;
         width: 90px;
         height: 100px;
-        background: url(../images/char-boy.png) no-repeat; }
+        background: url(../images/char-boy.png) no-repeat;
+        -webkit-transition: -webkit-transform 0.5s ease-in-out;
+        transition: -webkit-transform 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out; }
       #wrapper main section .art #princess {
         background: url(../images/char-princess-girl.png) no-repeat; }
       #wrapper main section .art #bug {
@@ -604,8 +616,10 @@ body {
     width: 200px;
     height: 500px;
     background-color: #fff;
-    margin: 1% 1% 0 0;
+    margin: 10px 1% 0 0;
     border-radius: 6px; }
     @media (max-width: 750px) {
       #wrapper main aside {
-        width: 95%; } }
+        width: 95%;
+        display: -webkit-box;
+        margin: 0 auto; } }

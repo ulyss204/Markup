@@ -28,9 +28,6 @@
     background: $bgColor;
   }
 }
-.art-mod.art{
-	background-color: #ADFF2F;
-}
 
 
 #hamburger{
@@ -111,6 +108,10 @@
 body{
 	margin: 0 auto;
 	background-color: #5fcf80;
+	min-width: 320px;
+	&.active{
+		overflow-x:hidden; 
+	}
 }
 .menu{
 	width: 300px;
@@ -122,17 +123,21 @@ body{
 
 	.menu__list{
 		padding: 0;
-		a{
-			text-decoration: none;
+		
 			.menu__item{
 				display: block;
-				border-bottom: 1px solid #fff;
-				text-transform: uppercase;
-				color: #fff;
 				padding: 20px;
-				font-size: 19px;
+				border-bottom: 1px solid #fff;
+				a{
+					text-decoration: none;
+					
+					text-transform: uppercase;
+					color: #fff;
+					
+					font-size: 19px;
+				}
 			}
-		}
+		
 	}
 	@include change-size{
 		body.active &{
@@ -143,6 +148,7 @@ body{
 }
 #wrapper{
 	transition:transform 0.4s ease;
+
 	@include change-size{
 		body.active &{
 			transform:translateX(300px);
@@ -181,14 +187,16 @@ body{
     		}
 			.nav{
 				padding: 0;
-				.nav__a{
-
 					.nav__menu{
-						color: #576c95;
+						
 						display: inline-block;
 						float: right;
 						text-transform: uppercase;
 						margin-right: 7%;
+						a{
+							color: #576c95;
+							text-decoration: none;
+						}
 					}
 				}
 				
@@ -213,7 +221,7 @@ body{
 				margin-top: 10px;
 			}
 		}
-	}
+	
 	main{
 		.block{
 			width: 250px;
@@ -227,7 +235,8 @@ body{
 		    @include change-size{
 		    	width: 95%;
 		    	display: block;
-		    	margin-left: 0;
+		    	float: none;
+		    	margin: 7px auto;
 		    }
 			.block__play{
 				border-radius: 6px;
@@ -267,11 +276,23 @@ body{
 				border-radius: 6px;
 				width: 95%;
 				position: relative;
+				&.art-mod{
+					background-color: #ccc;
+					.art__photo{
+						transform: scale(1.5);
+
+					}
+
+				}
+
 				.art__photo{
 					display: inline-block;
 					width: 90px;
 					height: 100px;
 					background: url(../images/char-boy.png) no-repeat;
+					transition:transform 0.5s ease-in-out;
+				
+
 				}
 				#princess{
 					background: url(../images/char-princess-girl.png) no-repeat;
@@ -294,11 +315,12 @@ body{
 		width: 200px;
 		height: 500px;
 		background-color: #fff;
-	    margin: 1% 1% 0 0;
+	    margin: 10px 1% 0 0;
 	    border-radius: 6px;
 	    @include change-size{
 		    	width: 95%;
-		    	
+		    	display: -webkit-box;
+		    	margin: 0 auto;
 		    }
 		}
 	}
