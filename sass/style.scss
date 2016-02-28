@@ -203,6 +203,7 @@ body{
 			margin-right: 2%;
     		margin-top: 25px;
     		border: 2px solid transparent;
+    		outline: none;
 			&:hover{
 				border-color: #4da83b;
 				border-radius: 5px;
@@ -224,7 +225,7 @@ body{
 		    float: left;
 		    height: 71px;
 		    @include change-size{
-		    	width: 100%;
+		    	width: 95%;
 		    	display: block;
 		    	margin-left: 0;
 		    }
@@ -240,6 +241,7 @@ body{
 			    display: block;
 			    margin: 15px auto;
 			    opacity: 0.7;
+			    outline: none;
 
 				&:hover{
 					opacity: 0.9;
@@ -261,14 +263,14 @@ body{
 			.art{
 				margin: 10px auto;
 				background-color: #fff;
-				height: 171px;
+				
 				border-radius: 6px;
 				width: 95%;
 				position: relative;
 				.art__photo{
 					display: inline-block;
-					width: 101px;
-					height: 171px;
+					width: 90px;
+					height: 100px;
 					background: url(../images/char-boy.png) no-repeat;
 				}
 				#princess{
@@ -295,7 +297,7 @@ body{
 	    margin: 1% 1% 0 0;
 	    border-radius: 6px;
 	    @include change-size{
-		    	width: 100%;
+		    	width: 95%;
 		    	
 		    }
 		}

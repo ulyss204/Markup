@@ -512,7 +512,8 @@ body {
       padding: 5px;
       margin-right: 2%;
       margin-top: 25px;
-      border: 2px solid transparent; }
+      border: 2px solid transparent;
+      outline: none; }
       #wrapper header .help:hover {
         border-color: #4da83b;
         border-radius: 5px; }
@@ -530,7 +531,7 @@ body {
     height: 71px; }
     @media (max-width: 750px) {
       #wrapper main .block {
-        width: 100%;
+        width: 95%;
         display: block;
         margin-left: 0; } }
     #wrapper main .block .block__play {
@@ -544,7 +545,8 @@ body {
       border: none;
       display: block;
       margin: 15px auto;
-      opacity: 0.7; }
+      opacity: 0.7;
+      outline: none; }
       #wrapper main .block .block__play:hover {
         opacity: 0.9; }
       @media (max-width: 750px) {
@@ -561,14 +563,13 @@ body {
     #wrapper main section .art {
       margin: 10px auto;
       background-color: #fff;
-      height: 171px;
       border-radius: 6px;
       width: 95%;
       position: relative; }
       #wrapper main section .art .art__photo {
         display: inline-block;
-        width: 101px;
-        height: 171px;
+        width: 90px;
+        height: 100px;
         background: url(../images/char-boy.png) no-repeat; }
       #wrapper main section .art #princess {
         background: url(../images/char-princess-girl.png) no-repeat; }
@@ -607,4 +608,4 @@ body {
     border-radius: 6px; }
     @media (max-width: 750px) {
       #wrapper main aside {
-        width: 100%; } }
+        width: 95%; } }
