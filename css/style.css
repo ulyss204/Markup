@@ -564,6 +564,7 @@ body {
         width: 100%;
         display: block; } }
     #wrapper main section .art {
+       cursor: pointer;
       margin: 10px auto;
       background-color: #fff;
       border-radius: 6px;
